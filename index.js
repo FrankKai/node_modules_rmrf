@@ -3,7 +3,7 @@
 const minimist = require("minimist");
 const { pathToRegexp } = require("path-to-regexp");
 const rimraf = require("rimraf");
-const rimraf = require("glob");
+const glob = require("glob");
 
 const argv = process.argv.slice(2);
 console.log("minimist argv", minimist(argv));
