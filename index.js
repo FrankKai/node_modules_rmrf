@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-const minimist = require("minimist");
-const { pathToRegexp } = require("path-to-regexp");
+// const minimist = require("minimist");
+// const { pathToRegexp } = require("path-to-regexp");
 const rimraf = require("rimraf");
 const glob = require("glob");
 const fs = require("fs");
 
-const argv = process.argv.slice(2);
-console.log("minimist argv", minimist(argv));
-const { dir, deep } = minimist(argv);
-console.log("dir", dir);
+// const argv = process.argv.slice(2);
+// console.log("minimist argv", minimist(argv));
+// const { dir, deep } = minimist(argv);
+// console.log("dir", dir);
 // const node_modules_dir = `${dir}/node_modules`;
 const node_modules_dir = `node_modules`;
 
@@ -20,8 +20,9 @@ glob(`**/${node_modules_dir}`, {}, function (er, files) {
   // er is an error object or null.
   console.log("files:::", files);
   for (const dir of files) {
+    console.log('fs.existsSync(dir):::', fs.existsSync(dir))
     if (fs.existsSync(dir)) {
-      rimraf(dir, function (err) {
+      rimraf.sync(dir, function (err) {
         // rimraf(regexp, function (err) {
         console.log(err);
       });
