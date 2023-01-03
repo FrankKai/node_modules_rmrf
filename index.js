@@ -11,6 +11,7 @@ console.log("dir", dir);
 const node_modules_dir = `${dir}/node_modules`;
 const regexp = pathToRegexp(node_modules_dir);
 console.log("regexp", regexp);
-rimraf(regexp, function (err) {
+rimraf(node_modules_dir, function (err) {
+// rimraf(regexp, function (err) {
   console.log(err);
 });
