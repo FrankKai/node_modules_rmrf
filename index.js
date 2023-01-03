@@ -16,7 +16,7 @@ glob(`**/${node_modules_dir}`, {}, function (er, files) {
     console.log("dir:::", dir)
     if (fs.existsSync(dir)) {
       console.log("removed:::", dir);
-      rimraf.sync(dir);
+      rimraf(dir);
     }
   }
 });
