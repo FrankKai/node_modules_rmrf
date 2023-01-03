@@ -13,7 +13,7 @@
     }
   ],
   "scripts": {
-    "test": "node index.js --dir=. --deep=false",
+    "test": "node index.js",
     "build": "rm -rf dist && tsc -p tsconfig.json && tsc -p tsconfig-esm.json",
     "alpha": "npm version prerelease --preid=alpha && npm publish",
     "beta": "npm version prerelease --preid=beta && npm publish",
