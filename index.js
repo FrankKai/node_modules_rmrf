@@ -12,7 +12,7 @@ console.log("dir", dir);
 // const node_modules_dir = `${dir}/node_modules`;
 const node_modules_dir = `node_modules`;
 
-glob(`**/${node_modules_dir}`, options, function (er, files) {
+glob(`**/${node_modules_dir}`, {}, function (er, files) {
   // files is an array of filenames.
   // If the `nonull` option is set, and nothing
   // was found, then files is ["**/*.js"]
