@@ -4,6 +4,7 @@ const minimist = require("minimist");
 const { pathToRegexp } = require("path-to-regexp");
 const rimraf = require("rimraf");
 const glob = require("glob");
+const fs = require("fs");
 
 const argv = process.argv.slice(2);
 console.log("minimist argv", minimist(argv));
@@ -17,7 +18,15 @@ glob(`**/${node_modules_dir}`, {}, function (er, files) {
   // If the `nonull` option is set, and nothing
   // was found, then files is ["**/*.js"]
   // er is an error object or null.
-  console.log('files:::', files)
+  console.log("files:::", files);
+  for (const dir of files) {
+    if (fs.existsSync(dir)) {
+      rimraf(dir, function (err) {
+        // rimraf(regexp, function (err) {
+        console.log(err);
+      });
+    }
+  }
 });
 // const regexp = pathToRegexp(node_modules_dir);
 // console.log("regexp", regexp);
