@@ -22,10 +22,7 @@ glob(`**/${node_modules_dir}`, {}, function (er, files) {
   for (const dir of files) {
     console.log('fs.existsSync(dir):::', fs.existsSync(dir))
     if (fs.existsSync(dir)) {
-      rimraf.sync(dir, function (err) {
-        // rimraf(regexp, function (err) {
-        console.log(err);
-      });
+      rimraf.sync(dir);
     }
   }
 });
