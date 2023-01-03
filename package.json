@@ -1,6 +1,6 @@
 {
   "name": "node_modules_rmrf",
-  "version": "1.0.1-alpha.8",
+  "version": "1.0.1-alpha.9",
   "description": "rm -rf specified dir's all node_modules, including all sub directory's node_modules recursively",
   "main": "index.js",
   "bin": {
